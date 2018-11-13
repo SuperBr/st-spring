@@ -1,0 +1,12 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                             http://www.springframework.org/schema/beans/spring-beans.xsd"
+
+
+>
+
+    <bean id="beanA" class="com.spring.day_4.bean.BeanA">
+        <property name="name" value="${user.home}"/>
+    </bean>
+</beans>

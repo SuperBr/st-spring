@@ -46,7 +46,7 @@ public class BeanA {
     }
 
     public BeanA setMan(Boolean man) {
-        man = man;
+        this.man = man;
         return this;
     }
 }

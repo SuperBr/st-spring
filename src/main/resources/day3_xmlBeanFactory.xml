@@ -17,6 +17,8 @@
 
     <bean id="beanB_1" class="com.spring.day_3.bean.BeanB"/>
 
+    <bean class="com.spring.day_3.bean.AppAware"/>
+
 
 
 

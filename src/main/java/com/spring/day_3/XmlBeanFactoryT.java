@@ -2,6 +2,7 @@ package com.spring.day_3;
 
 import com.spring.day_3.bean.BeanA;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.expression.StandardBeanExpressionResolver;
 import org.springframework.core.io.ClassPathResource;
 
@@ -14,6 +15,7 @@ public class XmlBeanFactoryT {
         XmlBeanFactory xmlBeanFactory = new XmlBeanFactory(new ClassPathResource("day3_xmlBeanFactory.xml"));
         xmlBeanFactory.setBeanExpressionResolver(new StandardBeanExpressionResolver());
 
+      
 
         BeanA beanA = (BeanA) xmlBeanFactory.getBean("beanA");
 
