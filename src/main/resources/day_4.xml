@@ -9,4 +9,6 @@
     <bean id="beanA" class="com.spring.day_4.bean.BeanA">
         <property name="name" value="${user.home}"/>
     </bean>
+
+    <bean class="com.spring.day_4.bean.MyListener"/>
 </beans>
