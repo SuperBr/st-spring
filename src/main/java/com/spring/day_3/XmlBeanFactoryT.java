@@ -2,6 +2,7 @@ package com.spring.day_3;
 
 import com.spring.day_3.bean.BeanA;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.expression.StandardBeanExpressionResolver;
 import org.springframework.core.io.ClassPathResource;
 
@@ -14,17 +15,9 @@ public class XmlBeanFactoryT {
         XmlBeanFactory xmlBeanFactory = new XmlBeanFactory(new ClassPathResource("day3_xmlBeanFactory.xml"));
         xmlBeanFactory.setBeanExpressionResolver(new StandardBeanExpressionResolver());
 
-        xmlBeanFactory.addBeanPostProcessor(new MDestructionAwareProcess());
-
-        xmlBeanFactory.addPropertyEditorRegistrar(new MPropertyEditorRegistrar());
-
-
+      
 
         BeanA beanA = (BeanA) xmlBeanFactory.getBean("beanA");
-
-        xmlBeanFactory.destroySingletons();
-
-        BeanA beanA_ = (BeanA) xmlBeanFactory.getBean("beanA");
 
         System.out.println("stop!");
 

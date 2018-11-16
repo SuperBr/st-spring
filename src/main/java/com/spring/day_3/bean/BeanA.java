@@ -51,7 +51,7 @@ public class BeanA implements InitializingBean,Destroyable{
     }
 
     public BeanA setMan(Boolean man) {
-        man = man;
+        this.man = man;
         return this;
     }
 
