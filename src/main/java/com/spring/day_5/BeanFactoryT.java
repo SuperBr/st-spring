@@ -52,5 +52,7 @@ public class BeanFactoryT {
         beanA.a();
         beanA.b();
 
+        beanC.m();
+
     }
 }
