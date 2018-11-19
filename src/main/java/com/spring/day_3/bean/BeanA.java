@@ -1,10 +1,15 @@
 package com.spring.day_3.bean;
 
+import org.springframework.beans.factory.InitializingBean;
+
+import javax.security.auth.DestroyFailedException;
+import javax.security.auth.Destroyable;
+
 /**
  * @author wangyongchao
  * @date 2018/11/12  16:24
  */
-public class BeanA {
+public class BeanA implements InitializingBean,Destroyable{
 
     private String name;
 
@@ -48,5 +53,27 @@ public class BeanA {
     public BeanA setMan(Boolean man) {
         this.man = man;
         return this;
+    }
+
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("afterPropertiesSet!");
+    }
+
+
+    public void init() {
+        System.out.println("init");
+    }
+
+    public void destory() {
+
+        System.out.println("destory!");
+    }
+
+    public void destroy() throws DestroyFailedException {
+        System.out.println("Destroyable!");
+    }
+
+    public boolean isDestroyed() {
+        return true;
     }
 }

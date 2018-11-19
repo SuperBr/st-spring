@@ -5,14 +5,12 @@
 
 >
 
-    <bean class="com.spring.day_3.bean.BeanA" id="beanA" autowire="byType">
+    <bean class="com.spring.day_3.bean.BeanA" id="beanA" autowire="byType"
+          init-method="init" destroy-method="destory">
         <property name="name" value="name"/>
         <property name="man" value="#{1==1}"/>
         <property name="beanB" value="#{beanB_1}"/>
     </bean>
-
-
-
 
 
     <bean id="beanB_1" class="com.spring.day_3.bean.BeanB"/>
@@ -20,6 +18,9 @@
     <bean class="com.spring.day_3.bean.AppAware"/>
 
 
+    <bean id="beanC" class="com.spring.day_3.bean.BeanC">
+        <property name="beanA" value="aaa"/>
 
 
+    </bean>
 </beans>
