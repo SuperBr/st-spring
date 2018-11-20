@@ -22,13 +22,13 @@ public class SpringMVCT {
 
         TomcatServletWebServerFactory webServerFactory = new TomcatServletWebServerFactory(8089);
 
-        webServerFactory.setBaseDirectory(new File("F:\\mypro\\st-spring\\src\\main\\resources"));
+        webServerFactory.setBaseDirectory(new File("E:\\myproject\\maven\\st-spring\\src\\main\\resources"));
 
         webServerFactory.addContextCustomizers(e -> {
             e.addApplicationListener("org.springframework.web.context.ContextLoaderListener");
             e.addParameter("contextConfigLocation", "classpath:WEB-INF/applicationContext.xml");
 
-
+            e.setDocBase("E:\\myproject\\maven\\st-spring\\src\\main\\resources");
 
             Wrapper wrapper = e.createWrapper();
             e.addChild(wrapper);
@@ -42,10 +42,7 @@ public class SpringMVCT {
             wrapper.setLoadOnStartup(0);
 
 
-
         });
-
-
 
 
         WebServer server = webServerFactory.getWebServer();

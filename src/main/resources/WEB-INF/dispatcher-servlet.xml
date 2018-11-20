@@ -14,9 +14,24 @@
     <bean id="urlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="/index.htm">myController</prop>
+                <prop key="/index">myController</prop>
             </props>
         </property>
     </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="prefix" value="view"></property>
+        <property name="suffix" value=".ftl"></property>
+        <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"></property>
+
+    </bean>
+
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath"  value="classpath:/"></property>
+
+    </bean>
+
+
+
 
 </beans>

@@ -16,6 +16,7 @@ public class ControllerA extends AbstractController {
 
         ModelAndView modelAndView = new ModelAndView();
 
+        modelAndView.setViewName("/index");
 
         return modelAndView;
     }
