@@ -25,8 +25,8 @@ public class SpringMVCT {
         webServerFactory.setBaseDirectory(new File("E:\\myproject\\maven\\st-spring\\src\\main\\resources"));
 
         webServerFactory.addContextCustomizers(e -> {
-            e.addApplicationListener("org.springframework.web.context.ContextLoaderListener");
-            e.addParameter("contextConfigLocation", "classpath:WEB-INF/applicationContext.xml");
+           /* e.addApplicationListener("org.springframework.web.context.ContextLoaderListener");
+            e.addParameter("contextConfigLocation", "classpath:WEB-INF/applicationContext.xml");*/
 
             e.setDocBase("E:\\myproject\\maven\\st-spring\\src\\main\\resources");
 
