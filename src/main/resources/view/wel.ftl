@@ -23,13 +23,12 @@ wel!
 <script>
     $('#json').click(function(){
         var obj={};
-        obj.lang='12';
-        obj.string='sss';
+        obj.lang=12;
         $.ajax({
           data:JSON.stringify(obj),
           contentType:'application/json',
           type:'post',
-          url:'/request',
+          url:'/request?wyc=wyc',
           success:function(re){
 
           },

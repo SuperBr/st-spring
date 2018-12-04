@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @Configuration
-@EnableWebMvc
 public class MyConfig extends WebMvcConfigurationSupport {
 
 
