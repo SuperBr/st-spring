@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 import org.springframework.web.servlet.mvc.AbstractController;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
@@ -18,7 +20,7 @@ import java.util.Map;
 
 @Configuration
 @EnableWebMvc
-public class MyConfig {
+public class MyConfig extends WebMvcConfigurationSupport {
 
 
     /*@Bean
@@ -31,5 +33,11 @@ public class MyConfig {
         return requestMappingHandlerMapping;
     }*/
 
+    @Override
+    protected void addInterceptors(InterceptorRegistry registry) {
+        super.addInterceptors(registry);
+        registry.addInterceptor(new MyIntercepter());
 
+
+    }
 }
