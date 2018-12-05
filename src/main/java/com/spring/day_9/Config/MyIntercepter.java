@@ -1,5 +1,6 @@
 package com.spring.day_9.Config;
 
+import com.spring.day_9.bean.Pserson;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,6 +17,8 @@ public class MyIntercepter implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
+        request.setAttribute("pserson", new Pserson().setAge(15));
         return true;
     }
 

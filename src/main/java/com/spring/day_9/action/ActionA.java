@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.jws.WebParam;
+
 @Service
 @RequestMapping
 public class ActionA {
@@ -30,11 +32,39 @@ public class ActionA {
 
 
     @RequestMapping("/request")
-    private String request(@RequestBody Long lang, String string, String name) {
+    @ResponseBody
+    private LangModel request(@RequestBody LangModel lang, String wyc,Pserson pserson) {
 
-        System.out.println(lang + string);
 
-        return "success!";
 
+        System.out.println(lang );
+
+        return lang;
+
+    }
+
+    public static class  LangModel{
+
+        private Long lang;
+
+        private String name;
+
+        public Long getLang() {
+            return lang;
+        }
+
+        public LangModel setLang(Long lang) {
+            this.lang = lang;
+            return this;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public LangModel setName(String name) {
+            this.name = name;
+            return this;
+        }
     }
 }

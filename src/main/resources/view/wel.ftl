@@ -24,6 +24,7 @@ wel!
     $('#json').click(function(){
         var obj={};
         obj.lang=12;
+        obj.name = "name";
         $.ajax({
           data:JSON.stringify(obj),
           contentType:'application/json',
