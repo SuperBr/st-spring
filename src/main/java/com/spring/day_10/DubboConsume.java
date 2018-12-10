@@ -18,14 +18,14 @@ public class DubboConsume {
         ApplicationConfig applicationConfig = new ApplicationConfig();
 
 
-        applicationConfig.setName("wyc-test");
+        applicationConfig.setName("wyc-test-consume");
 
         applicationConfig.setLogger("slf4j");
 
 
         RegistryConfig registryConfig = new RegistryConfig();
 
-        registryConfig.setProtocol("zookeeper");
+        registryConfig.setProtocol("dubbo");
 
 
         registryConfig.setAddress("127.0.0.1:2181");

@@ -34,12 +34,12 @@ public class DubboProvider {
 
         RegistryConfig registryConfig = new RegistryConfig();
 
-        registryConfig.setProtocol("zookeeper");
+        registryConfig.setProtocol("dubbo");
 
 
         registryConfig.setAddress("127.0.0.1:2181");
 
-        registryConfig.setCluster("cluster");
+        //registryConfig.setCluster("cluster");
 
 
         applicationConfig.setRegistry(registryConfig);
