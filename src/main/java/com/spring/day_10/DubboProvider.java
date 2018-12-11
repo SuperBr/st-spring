@@ -34,7 +34,7 @@ public class DubboProvider {
 
         RegistryConfig registryConfig = new RegistryConfig();
 
-        registryConfig.setProtocol("dubbo");
+        registryConfig.setProtocol("zookeeper");
 
 
         registryConfig.setAddress("127.0.0.1:2181");
@@ -60,9 +60,6 @@ public class DubboProvider {
         serviceConfig.setInterface("com.spring.day_10.api.ICatService");
 
         serviceConfig.setRef(new CatService());
-
-
-
 
 
         serviceConfig.export();
