@@ -7,7 +7,7 @@ package com.spring.day_10;
 public class DubboProvider1 {
 
     public static void main(String[] args) throws InterruptedException {
-        ProviderDeleget.doProvider(20887,"wyc-test");
+        ProviderDeleget.doProvider(20889,"wyc-test");
 
 
     }

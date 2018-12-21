@@ -2,6 +2,7 @@ package com.spring.day_10;
 
 import com.alibaba.dubbo.config.*;
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol;
 import com.spring.day_10.api.ICatService;
 import com.spring.day_10.model.Cat;
 import com.spring.day_10.service.CatService;
@@ -25,7 +26,7 @@ public class DubboConsume {
 
         RegistryConfig registryConfig = new RegistryConfig();
 
-        registryConfig.setProtocol("dubbo");
+        registryConfig.setProtocol("zookeeper");
 
 
         registryConfig.setAddress("127.0.0.1:2181");
@@ -41,19 +42,31 @@ public class DubboConsume {
 
         referenceConfig.setInterface(ICatService.class);
 
+
         ConsumerConfig consumerConfig = new ConsumerConfig();
 
+        consumerConfig.setGroup("wyc-test");
 
-        consumerConfig.setGroup("wyc");
+
 
 
         referenceConfig.setConsumer(consumerConfig);
 
+
+
+
         ICatService catService = (ICatService) referenceConfig.get();
 
         while (true) {
-            Thread.sleep(2000);
-            System.out.println(catService.printCat(new Cat().setName("cat")));
+
+            try {
+                Thread.sleep(2000);
+
+                System.out.println(catService.printCat(new Cat().setName("cat")));
+
+            } catch (Exception e) {
+
+            }
 
         }
 

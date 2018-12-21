@@ -48,7 +48,7 @@ public class InvokerT {
                 new HeaderExchangeClient(nettyClient)
         };
 
-        Invoker invoker = new DubboInvoker(ICatService.class, new URL("dubbo", "127.0.0.1", 20889,null,map), exchangeClients);
+        Invoker invoker = new DubboInvoker(ICatService.class, new URL("dubbo", "127.0.0.1", 20889,"com.spring.day_10.api.ICatService",map), exchangeClients);
 
         RpcInvocation invocation = new RpcInvocation();
         invocation.setAttachments(map);
@@ -59,7 +59,7 @@ public class InvokerT {
 
         Result result = invoker.invoke(invocation);
 
-        System.out.println(result.toString());
+        System.out.println(result.getValue());
 
 
     }
