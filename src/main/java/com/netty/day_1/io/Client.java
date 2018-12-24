@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) throws IOException {
-        IoClient ioClient = new IoClient(20880);
+        IoClient ioClient = new IoClient(21880);
         ioClient.clientProcess();
     }
 
